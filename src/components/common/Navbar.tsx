@@ -33,7 +33,15 @@ const Navbar = ({ scrolled }: NavbarProps) => {
       <div className="container mx-auto px-4 py-4 md:py-6 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <Brush className="h-8 w-8 text-emerald-700" />
-          <span className="text-2xl font-bold text-navy-900">
+          <span
+            className={`text-2xl font-bold ${
+              scrolled
+                ? "text-navy-900"
+                : location.pathname === "/"
+                ? "text-white"
+                : "text-navy-900"
+            }`}
+          >
             CreativeStudio
           </span>
         </Link>
